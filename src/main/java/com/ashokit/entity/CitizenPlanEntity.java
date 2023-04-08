@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
-@Data
+//@Data
 @Entity
 @Table(name="CITIZEN_PLAN_INFO")
 public class CitizenPlanEntity {
@@ -17,6 +17,23 @@ public class CitizenPlanEntity {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer citizenId;
+	
+	private String gender;
+	private String planName;
+	private String planStatus;
+	private LocalDate planStartDate;
+	private LocalDate planEndDate;
+	private Double benifitAmount;
+	private String denialReason;
+	private LocalDate terminatedDate;
+	private String terminationReason;
+	
+	
+	  @Override public String toString() { // TODO Auto-generated method stub
+	  return "CitizenPlanEntity [gender=" + gender + ", planName=" + planName + ", planStatus=" + planStatus + ", planStartDate ="+ planStartDate + ""
+	  		+ ",planEndDate =" +planEndDate+",benifitAmount =" +benifitAmount+ ",denialReason = " +denialReason+",terminatedDate =" +terminatedDate+ ","
+	  				+ "terminationReason ="+terminationReason+"]";}
+	
 	public Integer getCitizenId() {
 		return citizenId;
 	}
@@ -99,16 +116,6 @@ public class CitizenPlanEntity {
 		this.terminatedDate = terminatedDate;
 		this.terminationReason = terminationReason;
 	}
-	private String gender;
-	private String planName;
-	private String planStatus;
-	private LocalDate planStartDate;
-	private LocalDate planEndDate;
-	private Double benifitAmount;
-	private String denialReason;
-	private LocalDate terminatedDate;
-	private String terminationReason;
-	
 	
 	public CitizenPlanEntity() {
 		// TODO Auto-generated constructor stub
